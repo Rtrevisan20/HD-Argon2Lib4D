@@ -2,7 +2,7 @@
 
 Porte **nativo** do [Argon2](https://github.com/P-H-C/phc-winner-argon2) para
 **Pascal/Delphi** — implementação 100% em código Pascal, **sem DLL**. Compila em
-**Delphi** (Win32/Win64) **e** em **FreePascal/Lazarus**.
+**Delphi** (Win32/Win64) **e** em **FreePascal/Lazarus** (Windows **e** Linux).
 
 Substituto drop-in do binding `libargon2.dll`: a mesma API pública (`argon2_hash`,
 `argon2_verify`, `argon2_*_hash_encoded`, etc.) e ainda uma **fachada de uso
@@ -221,6 +221,25 @@ x86_64-win64), sem avisos: a fachada `THDArgon2` e o KAT do `argon2id` v19 são
 conferidos byte-a-byte. Os `src/*.pas` trazem guardas `{$IFDEF FPC}` (diretiva
 `{$MODE DELPHI}`, `uses` condicionais e códigos de aviso do FPC) que são
 **ignoradas pelo Delphi** — o build Delphi permanece idêntico.
+
+#### Linux / POSIX (FPC/Lazarus)
+
+A biblioteca também foi **validada em Linux** (FPC 3.2.2, `linux/x86_64`): as 7
+units compilam **sem avisos** e os **120 vetores-ouro** da referência C
+(`argon2i/d/id`, v16/v19, `m` até 64 MiB, `t=1/3`, `p=1/2/4`) batem
+**byte-a-byte**, tanto mono quanto multi-thread. Fora do Windows, o salt seguro
+passa a usar **`/dev/urandom`** (o ramo `BCryptGenRandom` só é compilado no
+Windows).
+
+> **Multithread no Linux:** em programas que usam a lib com `p > 1`, adicione a
+> unit **`cthreads`** como a **primeira** do `uses` do *programa* (projetos novos
+> do Lazarus já a incluem; no `fpc` puro, use `{$IFDEF UNIX}cthreads,{$ENDIF}` ou
+> `-dUseCThreads`). É uma exigência do *programa*, não da biblioteca.
+
+> O **Sample** (`Samples/Argon2Lib4DSample`) e o **teste de estresse**
+> (`Tests/Argon2StressTest`) são **Windows-only** — usam `QueryPerformanceCounter`
+> (`Windows`/`Winapi.Windows`) e scripts PowerShell. Somente a **biblioteca** é
+> multiplataforma.
 
 ### Resultados dos testes
 
