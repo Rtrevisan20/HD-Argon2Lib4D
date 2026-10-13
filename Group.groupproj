@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{732C7BC7-460A-4B7D-B151-D18CEA555DA8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Argon2Lib4D.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Samples\Argon2Lib4DSample\Argon2Lib4DSample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Tests\Argon2StressTest\Argon2StressTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Argon2Lib4D">
+        <MSBuild Projects="Argon2Lib4D.dproj"/>
+    </Target>
+    <Target Name="Argon2Lib4D:Clean">
+        <MSBuild Projects="Argon2Lib4D.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Argon2Lib4D:Make">
+        <MSBuild Projects="Argon2Lib4D.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Argon2Lib4DSample">
+        <MSBuild Projects="Samples\Argon2Lib4DSample\Argon2Lib4DSample.dproj"/>
+    </Target>
+    <Target Name="Argon2Lib4DSample:Clean">
+        <MSBuild Projects="Samples\Argon2Lib4DSample\Argon2Lib4DSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Argon2Lib4DSample:Make">
+        <MSBuild Projects="Samples\Argon2Lib4DSample\Argon2Lib4DSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Argon2StressTest">
+        <MSBuild Projects="Tests\Argon2StressTest\Argon2StressTest.dproj"/>
+    </Target>
+    <Target Name="Argon2StressTest:Clean">
+        <MSBuild Projects="Tests\Argon2StressTest\Argon2StressTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Argon2StressTest:Make">
+        <MSBuild Projects="Tests\Argon2StressTest\Argon2StressTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Argon2Lib4D;Argon2Lib4DSample;Argon2StressTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Argon2Lib4D:Clean;Argon2Lib4DSample:Clean;Argon2StressTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Argon2Lib4D:Make;Argon2Lib4DSample:Make;Argon2StressTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

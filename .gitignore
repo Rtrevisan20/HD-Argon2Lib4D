@@ -1,0 +1,60 @@
+# Delphi / Embarcadero - artefatos de build
+__history/
+__recovery/
+*.dcu
+*.o
+*.dpu
+*.dcp
+*.bpl
+*.bpi
+*.dsk
+*.local
+*.identcache
+*.stat
+*.projdata
+*.tvsconfig
+*.otares
+*.map
+*.jdbg
+*.rsm
+*.exe
+
+# Saidas de build
+Debug/
+Release/
+output/
+
+# FreePascal / Lazarus - artefatos de build
+*.ppu
+*.a
+*.or
+*.compiled
+*.lps
+*.bak
+lib/
+packagefiles.xml
+
+# Excecao: os binarios prontos do teste de estresse ficam versionados, para
+# que se possa rodar/validar a Lib sem precisar compilar.
+!Tests/Argon2StressTest/Win32/Argon2StressTest.exe
+!Tests/Argon2StressTest/Win64/Argon2StressTest.exe
+
+# Relatorio do teste de estresse (gerado a cada execucao)
+stress-report*.txt
+
+# Nao versionar a lib nativa de terceiros
+*.dll
+*.so
+*.dylib
+
+# Agentes/IA
+AGENTS.md
+*.agents
+**/AGENTS.md
+**/*.agents
+**/.opencode
+**/.cursor
+**/.claude
+**/.github/copilot
+**/*.env
+**/*.env.*

@@ -1,0 +1,44 @@
+package Argon2Lib4D;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Lib Argon2 4D'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl;
+
+contains
+  HDArgon2Lib4D.Blake2b in 'src\HDArgon2Lib4D.Blake2b.pas',
+  HDArgon2Lib4D.Blamka in 'src\HDArgon2Lib4D.Blamka.pas',
+  HDArgon2Lib4D.Core in 'src\HDArgon2Lib4D.Core.pas',
+  HDArgon2Lib4D.Encoding in 'src\HDArgon2Lib4D.Encoding.pas',
+  HDArgon2Lib4D in 'src\HDArgon2Lib4D.pas',
+  HDArgon2Lib4D.Types in 'src\HDArgon2Lib4D.Types.pas',
+  HDArgon2Lib4D.Api in 'src\HDArgon2Lib4D.Api.pas';
+
+end.

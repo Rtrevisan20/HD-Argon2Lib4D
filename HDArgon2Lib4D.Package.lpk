@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="HDArgon2Lib4D.Package"/>
+    <Author Value="HD-Argon2Lib4D"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="Porte nativo do Argon2 (PHC winner) para Pascal - 100% nativo, sem DLL. Pacote Lazarus/FPC."/>
+    <License Value="CC0 1.0 / Apache 2.0"/>
+    <Version Major="1" Minor="0"/>
+    <Files Count="7">
+      <Item1>
+        <Filename Value="src\HDArgon2Lib4D.Types.pas"/>
+        <UnitName Value="HDArgon2Lib4D.Types"/>
+      </Item1>
+      <Item2>
+        <Filename Value="src\HDArgon2Lib4D.Blake2b.pas"/>
+        <UnitName Value="HDArgon2Lib4D.Blake2b"/>
+      </Item2>
+      <Item3>
+        <Filename Value="src\HDArgon2Lib4D.Blamka.pas"/>
+        <UnitName Value="HDArgon2Lib4D.Blamka"/>
+      </Item3>
+      <Item4>
+        <Filename Value="src\HDArgon2Lib4D.Core.pas"/>
+        <UnitName Value="HDArgon2Lib4D.Core"/>
+      </Item4>
+      <Item5>
+        <Filename Value="src\HDArgon2Lib4D.Encoding.pas"/>
+        <UnitName Value="HDArgon2Lib4D.Encoding"/>
+      </Item5>
+      <Item6>
+        <Filename Value="src\HDArgon2Lib4D.Api.pas"/>
+        <UnitName Value="HDArgon2Lib4D.Api"/>
+      </Item6>
+      <Item7>
+        <Filename Value="src\HDArgon2Lib4D.pas"/>
+        <UnitName Value="HDArgon2Lib4D"/>
+      </Item7>
+    </Files>
+    <Type Value="RunTime"/>
+    <RequiredPkgs Count="0"/>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

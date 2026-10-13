@@ -1,0 +1,9 @@
+{
+  "name": "hd-argon2lib4d",
+  "description": "Argon2 nativo em Pascal/Delphi (porte do phc-winner-argon2), sem DLL.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Rtrevisan20/HD-Argon2Lib4D",
+  "mainsrc": "./src",
+  "projects": [],
+  "dependencies": {}
+}
